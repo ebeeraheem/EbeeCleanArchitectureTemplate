@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EbeeCleanArchitectureTemplate.API.Controllers;
@@ -19,6 +20,7 @@ public class WeatherForecastController(ILogger<WeatherForecastController> logger
     /// randomly from a predefined set of summaries.</remarks>
     /// <returns>An <see cref="IEnumerable{T}"/> of <see cref="WeatherForecast"/> objects representing the weather forecasts.</returns>
     [HttpGet]
+    [AllowAnonymous]
     public IEnumerable<WeatherForecast> Get()
     {
         logger.LogInformation("Getting weather forecast");
