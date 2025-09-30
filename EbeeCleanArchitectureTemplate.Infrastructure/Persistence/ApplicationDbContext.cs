@@ -1,4 +1,5 @@
-﻿using EbeeCleanArchitectureTemplate.Domain.Entities;
+﻿using EbeeCleanArchitectureTemplate.Application.Abstractions;
+using EbeeCleanArchitectureTemplate.Domain.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -10,7 +11,7 @@ namespace EbeeCleanArchitectureTemplate.Infrastructure.Persistence;
 public class ApplicationDbContext(
     DbContextOptions<ApplicationDbContext> options,
     IHttpContextAccessor httpContextAccessor)
-    : IdentityDbContext(options)
+    : IdentityDbContext(options), IApplicationDbContext
 {
     private readonly IHttpContextAccessor _httpContextAccessor = httpContextAccessor;
 

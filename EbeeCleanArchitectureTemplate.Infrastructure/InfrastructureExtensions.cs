@@ -1,4 +1,5 @@
-﻿using EbeeCleanArchitectureTemplate.Domain.Entities;
+﻿using EbeeCleanArchitectureTemplate.Application.Abstractions;
+using EbeeCleanArchitectureTemplate.Domain.Entities;
 using EbeeCleanArchitectureTemplate.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
@@ -23,6 +24,7 @@ public static class InfrastructureExtensions
         // Add DbContext with SQL Server provider
         services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+        services.AddScoped<IApplicationDbContext>(provider => provider.GetRequiredService<ApplicationDbContext>());
 
         services.AddHttpContextAccessor();
         services.AddHttpClient();

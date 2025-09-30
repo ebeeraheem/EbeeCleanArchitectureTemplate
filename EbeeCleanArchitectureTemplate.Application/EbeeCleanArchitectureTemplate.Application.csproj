@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EbeeCleanArchitectureTemplate.Domain\EbeeCleanArchitectureTemplate.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
