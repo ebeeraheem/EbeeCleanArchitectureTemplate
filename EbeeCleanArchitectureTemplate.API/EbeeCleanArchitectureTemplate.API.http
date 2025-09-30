@@ -1,0 +1,6 @@
+@EbeeCleanArchitectureTemplate.API_HostAddress = https://localhost:7247
+
+GET {{EbeeCleanArchitectureTemplate.API_HostAddress}}/api/weatherforecast
+Accept: application/json
+
+###
